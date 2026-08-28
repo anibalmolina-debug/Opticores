@@ -6,7 +6,6 @@
     "MixinLevelRenderer",
     "MixinMinecraftClient",
     "MixinEntityRenderDispatcher",
-    "MixinItemFrameEntityRenderer",
     "MixinBlockEntityRenderDispatcher",
     "MixinBlockModelRenderer",
     "MixinChunkBuilder",

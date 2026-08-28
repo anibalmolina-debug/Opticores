@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "opticores",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "OptiCore",
-  "description": "An aggressive client-side optimization suite for Minecraft. Implements culling, chunk stability, adaptive quality, and render scheduling.",
+  "description": "Client-side rendering optimization for Minecraft focused on visibility culling, adaptive scheduling, chunk stability, and consistent frame time.",
   "authors": ["ColorfulSunshine"],
   "contact": {
     "homepage": "https://modrinth.com/mod/opticores",
@@ -18,10 +18,7 @@
     "client": ["com.example.opticore.client.ClientSetup"],
     "modmenu": ["com.example.opticore.client.OpticoreModMenu"]
   },
-  "mixins": [
-    "opticore.mixins.json",
-    {"config": "opticore.client.mixins.json", "environment": "client"}
-  ],
+  "mixins": ["opticore.mixins.json", {"config": "opticore.client.mixins.json", "environment": "client"}],
   "depends": {
     "fabricloader": ">=0.16.5",
     "minecraft": "~1.21.1",

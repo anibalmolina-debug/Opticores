@@ -1,0 +1,6 @@
+{
+  "package": "com.example.opticore.mixin",
+  "plugin": "com.example.opticore.mixin.OpticoresMixinPlugin",
+  "mixins": [],
+  "client": []
+}

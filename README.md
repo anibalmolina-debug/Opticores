@@ -1,9 +1,23 @@
-# Example Mod
+# OptiCores
 
-## Setup
+OptiCores is a client-side Minecraft performance mod focused on visibility culling, render-work scheduling, chunk-load stability, and adaptive quality.
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+## Architecture
 
-## License
+- Immutable client-thread snapshots feed asynchronous culling workers.
+- Worker results are generation-tagged so stale results are discarded.
+- Occlusion tests are bounded and cached.
+- Temporal and predictive visibility reduce repeated expensive tests.
+- Chunk/VBO work is measured and throttled conservatively without dropping required uploads.
+- Dynamic quality uses frame-time and chunk-pressure telemetry with hysteresis.
+- Simulation-changing entity/AI/lighting/particle tick mixins are not enabled.
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Development
+
+The project targets Minecraft 1.21.1, Fabric Loader 0.16.5+, and Java 21.
+
+Build with:
+
+```text
+./gradlew build
+```

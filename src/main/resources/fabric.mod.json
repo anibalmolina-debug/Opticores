@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "opticores",
+  "version": "1.1.0",
+  "name": "OptiCore",
+  "description": "An aggressive client-side optimization suite for Minecraft. Implements culling, chunk stability, adaptive quality, and render scheduling.",
+  "authors": ["ColorfulSunshine"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/opticores",
+    "issues": "https://github.com/anibalmolina-debug/Opticores/issues",
+    "sources": "https://github.com/anibalmolina-debug/Opticores"
+  },
+  "license": "MIT",
+  "icon": "assets/opticore/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": ["com.example.opticore.Opticore"],
+    "client": ["com.example.opticore.client.ClientSetup"],
+    "modmenu": ["com.example.opticore.client.OpticoreModMenu"]
+  },
+  "mixins": [
+    "opticore.mixins.json",
+    {"config": "opticore.client.mixins.json", "environment": "client"}
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "cloth-config": "*",
+    "modmenu": "*"
+  },
+  "suggests": {"connector": "*"}
+}

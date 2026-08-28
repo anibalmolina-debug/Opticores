@@ -1,0 +1,15 @@
+{
+  "package": "com.example.opticore.mixin",
+  "plugin": "com.example.opticore.mixin.OpticoresMixinPlugin",
+  "mixins": [],
+  "client": [
+    "MixinLevelRenderer",
+    "MixinMinecraftClient",
+    "MixinEntityRenderDispatcher",
+    "MixinItemFrameEntityRenderer",
+    "MixinBlockEntityRenderDispatcher",
+    "MixinBlockModelRenderer",
+    "MixinChunkBuilder",
+    "MixinWorldRendererSetupTerrain"
+  ]
+}

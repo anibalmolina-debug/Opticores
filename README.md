@@ -1,6 +1,16 @@
 # OptiCores
 
-OptiCores is a client-side Minecraft performance mod for Fabric 1.21.1. The project focuses on reducing unnecessary rendering work and smoothing frame time without modifying Minecraft's gameplay simulation.
+OptiCores is a client-side Minecraft performance mod for **Fabric 1.21.1**. The project focuses on reducing unnecessary rendering work and smoothing frame time without modifying Minecraft's gameplay simulation.
+
+## Supported platform
+
+The active codebase targets:
+
+- Minecraft 1.21.1
+- Fabric Loader 0.16.5+
+- Java 21+
+
+The current repository is **Fabric-only**. Older Forge 1.20.1 reports refer to legacy 1.0.8 artifacts and are not bugs in the current 1.21.1 Fabric build. A separate legacy branch would be required if Forge 1.20.1 support is restored.
 
 ## Current architecture
 
@@ -17,6 +27,7 @@ Minecraft client
 - Distance, predictive, temporal, frustum, and conservative occlusion stages.
 - Occlusion tests are capped and cached.
 - Worker threads never access live world, entity, or chunk objects.
+- Results are published only when their generation still matches the current request.
 
 ### Chunk/render scheduling
 - Adaptive CPU work budget based on hardware tier and current pressure.
@@ -38,8 +49,12 @@ Use `/opticore benchmark` in a test world. Compare Vanilla, Sodium, and Sodium +
 
 ## Development
 
-- Minecraft: 1.21.1
-- Fabric Loader: 0.16.5+
-- Java: 21+
+Build locally with:
 
-Build locally with `./gradlew build`. The repository is designed for runtime verification against the exact Fabric/Yarn/Sodium/Iris versions used for release.
+```bash
+./gradlew build
+```
+
+The project uses the version from `gradle.properties` as the single source of truth; `fabric.mod.json` receives it during resource processing. GitHub Actions also runs a Java 21 Gradle build on pushes and pull requests.
+
+Runtime verification should be performed against the exact Fabric, Yarn, Sodium, and Iris versions intended for each release.

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "opticores",
-  "version": "1.1.1",
-  "name": "OptiCore",
+  "version": "${version}",
+  "name": "OptiCores",
   "description": "Client-side rendering optimization for Minecraft focused on visibility culling, adaptive scheduling, chunk stability, and consistent frame time.",
   "authors": ["ColorfulSunshine"],
   "contact": {
@@ -27,5 +27,7 @@
     "cloth-config": "*",
     "modmenu": "*"
   },
-  "suggests": {"connector": "*"}
+  "suggests": {
+    "connector": "*"
+  }
 }

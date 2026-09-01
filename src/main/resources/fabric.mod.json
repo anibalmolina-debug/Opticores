@@ -18,7 +18,12 @@
     "client": ["com.example.opticore.client.ClientSetup"],
     "modmenu": ["com.example.opticore.client.OpticoreModMenu"]
   },
-  "mixins": ["opticore.mixins.json", {"config": "opticore.client.mixins.json", "environment": "client"}],
+  "mixins": [
+    {
+      "config": "opticore.client.mixins.json",
+      "environment": "client"
+    }
+  ],
   "depends": {
     "fabricloader": ">=0.16.5",
     "minecraft": "~1.21.1",
